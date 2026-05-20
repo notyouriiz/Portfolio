@@ -26,7 +26,7 @@ export const projectsLocales = {
         tags: ["Web Application", "YOLOv8-Small", "YOLOv8-Large","Object Detection","Environmental Informatics"],
   
         // Auto icon detection handles this
-        primaryLink: "https://github.com/notyouriiz/Linkedin_Scraper",
+        primaryLink: "https://shmpublisher.com/index.php/joscex/article/view/634",
       },
       {
         number: "03",
