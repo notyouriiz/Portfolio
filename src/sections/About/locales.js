@@ -7,16 +7,7 @@ export const aboutLocales = {
       "Experienced in product and project management, applying design thinking, budgeting, and strategic planning while leading cross-functional teams in national AI competitions and industry-driven innovation programs.",
       "Beyond academics, I have contributed to building startup and student innovation projects as a Software Engineer, Product Manager, and even UI/UX Designer shaping me into a critical thinker with an adaptive, user-centered approach to solving real-world problems."
     ],
-
-    growithm: {
-      logoLetter: "G",
-      label: "Growithm",
-      description:
-        "Growithm is solution for your business through business automation and digital solution.",
-      link: "https://www.growithm.id",
-      ariaLabel: "Visit my startup",
-    },
-  
+    
     skillsSectionLabel: "Skills & Technologies",
     skillGroups: [
       { category: "Languages", skills: ["Python", "MySQL", "Postgres", "JavaScript", "TypeScript"] },

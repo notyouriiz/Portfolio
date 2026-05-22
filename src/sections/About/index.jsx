@@ -1,6 +1,6 @@
 import { aboutLocales } from "./locales";
 import SkillGrid from "./__components/SkillGrid";
-import GrowithmCard from "./__components/GrowithmCard";
+
 
 export default function About() {
   const headingLines = aboutLocales.heading.split("\n");
@@ -26,7 +26,6 @@ export default function About() {
               <p key={i} className="text-sm text-[var(--color-ink-muted)] leading-relaxed">{para}</p>
             ))}
           </div>
-          <GrowithmCard />
         </div>
 
         <div>
