@@ -19,6 +19,17 @@ export const projectsLocales = {
       },
       {
         number: "02",
+        name: "AI-Sales Assistant Chatbot",
+        role: "Software Engineer",
+        type: "Startup Project",
+        description: "To develop a high-performance Headless AI Chat Overlay for an existing e-commerce website. The system must handle a catalog of 126,000+ products with sub-second search latency, allow users to add items to the cart via chat, and securely access account data (invoices/history) without passwords.",
+        tags: ["Next.js", "Python", "LangChaing", "LangGraph", "RAG", "Promting System"],
+  
+        // Auto icon detection handles this
+        primaryLink: "https://github.com/frctlprdx/AI-SALES/tree/main",
+      },
+      {
+        number: "03",
         name: "Comparative performance analysis of YOLOv8 small and larger for real-time website-based monitoring",
         role: "Project Manager & Research",
         type: "Research",
@@ -29,8 +40,19 @@ export const projectsLocales = {
         primaryLink: "https://shmpublisher.com/index.php/joscex/article/view/634",
       },
       {
-        number: "03",
-        name: "Soegijapranata Catholic University Alumni Tracer",
+        number: "04",
+        name: "Object Volume Measurement Using Hybrid Approach",
+        role: "Research Technical",
+        type: "Research",
+        description: "A modular computer vision system for real-world object size and volume measurement Built with OpenCV 4.10+, designed for use in Jupyter Notebook or standalone Python scripts. Automatically calibrates scale using an ArUco marker, estimates object dimensions and volume, and logs results with timestamps to .csv files.",
+        tags: ["Python", "OpenCV", "ArUco","Object Detection","Jupyter Notebook"],
+  
+        // Auto icon detection handles this
+        primaryLink: "https://github.com/notyouriiz/Object-Volume-Measurement-using-Hybrid-Approach",
+      },
+      {
+        number: "05",
+        name: "Soegijapranata Catholic University Linkedin Profile Alumni Tracer",
         role: "Software Engineer",
         type: "Internship",
         description: "Website based linkedin scraping system to get SCU's Alumni profile on experience, education, and license & certification",
@@ -40,12 +62,12 @@ export const projectsLocales = {
         primaryLink: "https://github.com/notyouriiz/Linkedin_Scraper",
       },
       {
-        number: "04",
+        number: "06",
         name: "Travel Destination Recommendation",
         role: "project Manager",
         type: "Bootcamp",
         description: "a revolutionary travel application designed to transform tourism experiences in Indonesia by uncovering hidden gems and connecting travelers with unique destinations.",
-        tags: ["Website", "Scraping", "Flask", "Selenium", "Semi-Automation"],
+        tags: ["Personalized Recommendation", "Python", "TensorFlow", "Kotlin", "Google Cloud Platform", "Figma"],
   
         // Auto icon detection handles this
         primaryLink: "https://github.com/RaffiDM/capstone-easytour",

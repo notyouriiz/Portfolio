@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { heroLocales } from "./locales";
 import Stats from "./__components/Stats";
 
@@ -40,6 +41,21 @@ export default function Hero() {
           <a href={heroLocales.cta.secondary.href}
             className="inline-flex items-center gap-2 px-5 py-2.5 border border-[var(--color-border)] text-[var(--color-ink)] text-sm font-medium rounded-full hover:border-[var(--color-ink)] transition-colors duration-200">
             {heroLocales.cta.secondary.label}
+          </a>
+          <a
+            href={heroLocales.cta.third.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 border border-[var(--color-border)] text-[var(--color-ink)] text-sm font-medium rounded-full hover:border-[var(--color-ink)] transition-colors duration-200"
+          >
+            <Image
+              src="/assets/growithm-icon.png"
+              alt="Growithm icon"
+              width={16}
+              height={16}
+              className="w-4 h-4"
+            />
+            {heroLocales.cta.third.label}
           </a>
         </div>
 
