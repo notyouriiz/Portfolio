@@ -24,8 +24,15 @@ export default function ProjectCard({ project }) {
     if (domain.includes("github.com")) return "/assets/github-icon.png";
     if (domain.includes("drive.google.com")) return "/assets/drive-icon.png";
     if (domain.includes("growithm.id")) return "/assets/growithm-icon.png";
-    if (domain.includes("vercel.app") || domain.includes("netlify.app"))
-      return "/assets/research-icon.jpg";
+    if (domain.includes("figma.com")) return "/assets/figma-icon.png";
+    if (domain.includes("datastudio.google.com")) return "/assets/datastudio-icon.png";
+    if (
+      ["vercel.app", "netlify.app", "streamlit.app"].some((platform) =>
+        domain.includes(platform)
+      )
+    ) {
+      return "/assets/live-icon.png";
+    }
 
     return "/assets/research-icon.jpg";
   };
@@ -74,6 +81,10 @@ export default function ProjectCard({ project }) {
                   alt="Project link"
                   width={16}
                   height={16}
+                  style={{
+                    width: "16px",
+                    height: "16px",
+                  }}
                 />
               </a>
             )}
@@ -101,6 +112,61 @@ export default function ProjectCard({ project }) {
         <p className="text-sm text-[var(--color-ink-muted)] leading-relaxed mb-4 max-w-2xl">
           {project.description}
         </p>
+
+        {/* MEDIA */}
+        {project.media?.type === "gallery" && (() => {
+          const allItems = project.media.images; // can now include { type: "video", src: "..." }
+          const videos   = allItems.filter(item => item.type === "video");
+          const portrait = allItems.filter(item => item.type !== "video" && item.aspect === "portrait");
+          const landscape = allItems.filter(item => item.type !== "video" && item.aspect !== "portrait");
+
+          return (
+            <div className="flex flex-col gap-4 mb-5">
+              {/* Videos: full width, autoplay like a GIF */}
+              {videos.map((item, index) => (
+                <video
+                  key={`vid-${index}`}
+                  src={item.src}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="h-auto max-h-[520px] max-w-full rounded-xl border border-[var(--color-border)]"
+                />
+              ))}
+
+              {/* Landscape images: full width */}
+              {landscape.map((img, index) => (
+                <Image
+                  key={`land-${index}`}
+                  src={typeof img === "string" ? img : img.src}
+                  alt={`${project.name} landscape ${index + 1}`}
+                  width={600}
+                  height={400}
+                  className="w-full h-auto rounded-xl border border-[var(--color-border)]"
+                  unoptimized
+                />
+              ))}
+
+              {/* Portrait images: side by side */}
+              {portrait.length > 0 && (
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  {portrait.map((img, index) => (
+                    <Image
+                      key={`port-${index}`}
+                      src={typeof img === "string" ? img : img.src}
+                      alt={`${project.name} portrait ${index + 1}`}
+                      width={400}
+                      height={600}
+                      className="w-full h-auto rounded-xl border border-[var(--color-border)]"
+                      unoptimized
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          );
+        })()}
 
         {/* TAGS */}
         <div className="flex flex-wrap gap-2">

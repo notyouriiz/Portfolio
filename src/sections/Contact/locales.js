@@ -11,6 +11,6 @@ export const contactLocales = {
       { label: "Growithm.id", href: "https://growithm.id",                   handle: "growithm.id" },
     ],
     footer: {
-      copy: `© All Rights Reserved ${new Date().getFullYear()} Faiz Adhytia. Built with Next.js & Tailwind CSS.`,
+      copy: `© All Rights Reserved ${new Date().getFullYear()} Faiz Adhytia | Built with Next.js & Tailwind CSS. | Version 1.3.3`,
     },
   };
