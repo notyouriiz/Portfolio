@@ -1,4 +1,4 @@
-import { projectsLocales } from "../Projects/locales";
+import { projectsLocales } from "../../sections/Projects/locales";
 
 const slugify = (text) =>
   text

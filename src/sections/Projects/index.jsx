@@ -1,23 +1,24 @@
 import { projectsLocales } from "./locales";
 import ProjectTabs from "./__components/ProjectTabs";
+import styles from "./projects.module.css";
 
 export default function Projects() {
   return (
     <section
       id="projects"
-      className="section-pad scroll-mt-14 bg-[var(--color-surface)] border-t border-[var(--color-border)]"
+      className={`section-pad scroll-mt-14 ${styles.projects}`}
     >
       <div className="container-lg">
-        <div className="mb-12">
-          <p className="text-xs font-medium text-[var(--color-ink-muted)] uppercase tracking-widest mb-4">
+        <div className={styles.header}>
+          <p className={styles.label}>
             {projectsLocales.sectionLabel}
           </p>
 
-          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-[var(--color-ink)] mb-3">
+          <h2 className={styles.heading}>
             {projectsLocales.heading}
           </h2>
 
-          <p className="text-sm text-[var(--color-ink-muted)] max-w-lg">
+          <p className={styles.subheading}>
             {projectsLocales.subheading}
           </p>
         </div>

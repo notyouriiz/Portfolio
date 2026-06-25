@@ -1,37 +1,46 @@
 import { aboutLocales } from "./locales";
 import SkillGrid from "./__components/SkillGrid";
-
+import styles from "./about.module.css";
 
 export default function About() {
   const headingLines = aboutLocales.heading.split("\n");
 
   return (
-    <section id="about" className="section-pad scroll-mt-14 bg-[var(--color-surface-soft)] border-t border-[var(--color-border)]">
-      <div className="container-lg grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+    <section id="about" className={`section-pad scroll-mt-14 ${styles.about}`}>
+      <div className={`container-lg ${styles.container}`}>
         <div>
-          <p className="text-xs font-medium text-[var(--color-ink-muted)] uppercase tracking-widest mb-5">
+          <p className={styles.label}>
             {aboutLocales.sectionLabel}
           </p>
-          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-[var(--color-ink)] leading-tight mb-8">
+
+          <h2 className={styles.heading}>
             {headingLines.map((line, i) => (
-              <span key={i} className="block">
-                {i === 1
-                  ? <span className="text-[var(--color-ink-muted)] font-normal">{line}</span>
-                  : line}
+              <span key={i} className={styles.headingLine}>
+                {i === 1 ? (
+                  <span className={styles.headingMuted}>
+                    {line}
+                  </span>
+                ) : (
+                  line
+                )}
               </span>
             ))}
           </h2>
-          <div className="flex flex-col gap-4 mb-8">
+
+          <div className={styles.bio}>
             {aboutLocales.bio.map((para, i) => (
-              <p key={i} className="text-sm text-[var(--color-ink-muted)] leading-relaxed">{para}</p>
+              <p key={i} className={styles.paragraph}>
+                {para}
+              </p>
             ))}
           </div>
         </div>
 
         <div>
-          <p className="text-xs font-medium text-[var(--color-ink-muted)] uppercase tracking-widest mb-5">
+          <p className={styles.label}>
             {aboutLocales.skillsSectionLabel}
           </p>
+
           <SkillGrid />
         </div>
       </div>

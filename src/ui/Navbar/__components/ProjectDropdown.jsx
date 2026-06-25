@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { projectsLocales } from "../../Projects/locales";
+import { projectsLocales } from "../../../sections/Projects/locales";
 
 export default function ProjectDropdown() {
   const [open, setOpen] = useState(false);

@@ -1,66 +1,96 @@
 import Image from "next/image";
+import Button from "../../ui/Button";
 import { heroLocales } from "./locales";
 import Stats from "./__components/Stats";
+import styles from "./hero.module.css";
+import AmbientGlow from "./__animations/AmbientGlow";
 
 export default function Hero() {
   return (
-    <section id="hero" className="section-pad pt-32 min-h-screen flex items-center bg-[var(--color-surface)]">
+    <section id="hero" className={`section-pad ${styles.hero}`}>
+      <AmbientGlow />
       <div className="container-md">
 
         {heroLocales.availableDot && (
-          <div className="inline-flex items-center gap-2 mb-8">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-xs text-[var(--color-ink-muted)]">{heroLocales.availableLabel}</span>
+          <div className={styles.availability}>
+            <span className={styles.availabilityDot} />
+            <span className={styles.availabilityText}>
+              {heroLocales.availableLabel}
+            </span>
           </div>
         )}
 
-        <div className="mb-6 fade-in">
-          <p className="text-sm text-[var(--color-ink-muted)] mb-2">{heroLocales.greeting}</p>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight text-[var(--color-ink)] leading-[1.05]">
+        <div className={styles.heading}>
+          <p className={styles.greeting}>
+            {heroLocales.greeting}
+          </p>
+
+          <h1 className={styles.name}>
             {heroLocales.name}
-            <span className="block text-[var(--color-ink-muted)] font-normal text-3xl sm:text-4xl lg:text-5xl mt-2">
+
+            <span className={styles.role}>
               {heroLocales.role}
             </span>
           </h1>
         </div>
 
-        <p className="text-base sm:text-lg text-[var(--color-ink-muted)] max-w-xl leading-relaxed mb-10 fade-in">
+        <p className={styles.tagline}>
           {heroLocales.tagline}
         </p>
 
-        <div className="flex flex-wrap gap-3 mb-12">
-          <a href={heroLocales.cta.primary.href}
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[var(--color-ink)] text-white text-sm font-medium rounded-full hover:opacity-80 transition-opacity duration-200">
+        <div className={styles.actions}>
+          <Button
+            href={heroLocales.cta.primary.href}
+            variant="primary"
+          >
             {heroLocales.cta.primary.label}
+
             {heroLocales.ctaArrow && (
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M2.5 7h9m-4-4.5L11.5 7l-4 4.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+              >
+                <path
+                  d="M2.5 7h9m-4-4.5L11.5 7l-4 4.5"
+                  stroke="currentColor"
+                  strokeWidth="1.3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             )}
-          </a>
-          <a href={heroLocales.cta.secondary.href}
-            className="inline-flex items-center gap-2 px-5 py-2.5 border border-[var(--color-border)] text-[var(--color-ink)] text-sm font-medium rounded-full hover:border-[var(--color-ink)] transition-colors duration-200">
+          </Button>
+
+          <Button
+            href={heroLocales.cta.secondary.href}
+            variant="secondary"
+          >
             {heroLocales.cta.secondary.label}
-          </a>
-          <a
+          </Button>
+
+          <Button
             href={heroLocales.cta.third.href}
+            variant="secondary"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 border border-[var(--color-border)] text-[var(--color-ink)] text-sm font-medium rounded-full hover:border-[var(--color-ink)] transition-colors duration-200"
           >
             <Image
               src="/assets/growithm-icon.png"
               alt="Growithm icon"
               width={16}
               height={16}
-              className="w-4 h-4"
+              className={styles.icon}
             />
             {heroLocales.cta.third.label}
-          </a>
+          </Button>
         </div>
 
         <Stats />
       </div>
+      <div className={styles.heroFade} />
+      <div className={styles.bottomCurve} />
     </section>
   );
 }

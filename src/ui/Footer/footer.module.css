@@ -1,0 +1,102 @@
+/* ========================================
+   CONTACT SECTION
+======================================== */
+
+.contact {
+  background: var(--color-surface-soft);
+  border-top: 1px solid var(--color-border);
+}
+
+/* ========================================
+     HEADER
+  ======================================== */
+
+.label {
+  margin-bottom: 1.25rem;
+
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+
+  color: var(--color-ink-muted);
+}
+
+.heading {
+  margin-bottom: 1rem;
+
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+
+  color: var(--color-ink);
+}
+
+.subheading {
+  max-width: 28rem;
+  margin-bottom: 2.5rem;
+
+  font-size: 0.875rem;
+  line-height: 1.8;
+
+  color: var(--color-ink-muted);
+}
+
+/* ========================================
+     SOCIAL LINKS
+  ======================================== */
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+
+  border-top: 1px solid var(--color-border);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  font-size: 0.875rem;
+  text-decoration: none;
+
+  color: var(--color-ink-muted);
+
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: var(--color-ink);
+}
+
+.linkLabel {
+  font-weight: 500;
+}
+
+.linkHandle {
+  color: var(--color-ink-faint);
+}
+
+/* ========================================
+     FOOTER
+  ======================================== */
+
+.footer {
+  border-top: 1px solid var(--color-border);
+}
+
+.footer :global(.container-lg) {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.copyright {
+  font-size: 0.75rem;
+  color: var(--color-ink-faint);
+}

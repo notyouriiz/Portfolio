@@ -1,8 +1,8 @@
-import Navbar from "@/sections/Navbar";
-import Hero from "@/sections/Hero";
 import About from "@/sections/About";
+import Contact from "@/ui/Footer";
+import Hero from "@/sections/Hero";
 import Projects from "@/sections/Projects";
-import Contact from "@/sections/Contact";
+import Navbar from "@/ui/Navbar";
 
 export default function Page() {
   return (

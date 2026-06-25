@@ -1,0 +1,117 @@
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+  
+    background: rgb(from var(--color-surface) r g b / 0.9);
+  
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  /* ========================================
+     LAYOUT
+  ======================================== */
+  
+  .container {
+    position: relative;
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    height: 3.5rem;
+  }
+  
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  /* ========================================
+     BRAND
+  ======================================== */
+  
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+  
+    text-decoration: none;
+  }
+  
+  .logo {
+    width: 1.75rem;
+    height: 1.75rem;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    border-radius: 0.375rem;
+  
+    background: var(--color-ink);
+    color: white;
+  
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+  
+  .brandName {
+    display: none;
+  
+    font-size: 0.875rem;
+    font-weight: 500;
+  
+    color: var(--color-ink);
+  }
+  
+  @media (min-width: 640px) {
+    .brandName {
+      display: block;
+    }
+  }
+  
+  /* ========================================
+     CTA
+  ======================================== */
+  
+  .cta {
+    display: none;
+  
+    padding: 0.375rem 1rem;
+  
+    border: 1px solid var(--color-ink);
+    border-radius: 999px;
+  
+    color: var(--color-ink);
+  
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+  
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+  }
+  
+  .cta:hover {
+    background: var(--color-ink);
+    color: white;
+  }
+  
+  @media (min-width: 768px) {
+    .cta {
+      display: inline-flex;
+    }
+  }
