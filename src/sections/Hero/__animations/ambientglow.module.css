@@ -30,7 +30,7 @@
   top: -10rem;
   left: -12rem;
 
-  background: color-mix(in srgb, var(--color-primary) 18%, transparent);
+  background: #0D94882E;
 
   animation: floatBlue 16s ease-in-out infinite;
 }
@@ -46,11 +46,7 @@
   right: -8rem;
   bottom: 8rem;
 
-  background: color-mix(
-    in srgb,
-    var(--color-accent, var(--color-primary)) 15%,
-    transparent
-  );
+  background: #6366F126;
 
   animation: floatPurple 20s ease-in-out infinite;
 }
