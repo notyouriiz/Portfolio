@@ -1,0 +1,91 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  /* tall enough for pin-at-top + 320px hang + half card height (~160px) */
+  height: 620px;
+  overflow: visible;          /* card can sway outside column bounds            */
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* SVG fills the wrapper; overflow:visible lets it draw above the top edge
+   so the strap can reach the parent container's top.                         */
+.rope {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+
+  /* subtle smoothing so thin strap feels natural */
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.25));
+}
+
+/* Card: positioned from (0,0); JS writes the full translate+rotate          */
+.card {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 285px;
+  height: auto;
+
+  cursor: grab;
+  touch-action: none;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 24px 10px rgba(0, 0, 0, 0.38),
+    0 8px 5px rgba(0, 0, 0, 0.20);
+
+  z-index: 3;
+  will-change: transform;
+
+  /* small realism tweak */
+  transform-origin: top center;
+}
+
+.card:active { cursor: grabbing; }
+
+.holder {
+  position: absolute;
+  left: 50%;
+  top: -9px;
+
+  transform: translateX(-50%);
+
+  width: 34px;
+  height: 18px;
+
+  background: linear-gradient(
+    to bottom,
+    #3a4048,
+    #171b21
+  );
+
+  border-radius: 6px;
+
+  box-shadow:
+    0 4px 12px rgba(0,0,0,.35),
+    inset 0 1px rgba(255,255,255,.08);
+
+  z-index: 5;
+}
+
+.holder::after {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  width: 18px;
+  height: 4px;
+
+  transform: translate(-50%, -50%);
+
+  background: #090b0d;
+  border-radius: 999px;
+}

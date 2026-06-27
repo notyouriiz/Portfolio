@@ -23,4 +23,9 @@ export const heroLocales = {
       { value: "5+", label: "Projects" },
       { value: "1",   label: "Startups founded" },
     ],
+
+    lanyard: {
+      card: "/assets/lanyard/Card.png",
+      strap: "/assets/lanyard/Strap.png",
+    },
   };

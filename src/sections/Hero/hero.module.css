@@ -3,43 +3,106 @@
 ======================================== */
 
 .hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding-top: 8rem;
-    overflow: hidden;
-  
-    background: var(--color-surface);
-  }
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 8rem;
+  overflow: hidden;
+  background: var(--color-surface);
+}
 
-  .heroFade {
-    position: absolute;
-  
-    left: 0;
-    right: 0;
-    bottom: 0;
-  
-    height: 12rem;
-  
-    pointer-events: none;
-  
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      var(--color-surface-soft)
-    );
-  
-    z-index: 1;
-  }
-
-  .hero > * {
-    position: relative;
-    z-index: 3;
-  }
 /* ========================================
-     AVAILABILITY
-  ======================================== */
+   LAYER SYSTEM (IMPORTANT FIX)
+   ----------------------------------------
+   0 = background
+   1 = glow
+   2 = content
+   3 = overlays (fade/curve)
+======================================== */
+
+/* Glow layer (AmbientGlow wrapper) */
+.heroGlow {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Main content wrapper */
+.heroContent {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: minmax(480px, 1fr) 460px;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+/* ========================================
+   LEFT / RIGHT COLUMNS
+======================================== */
+
+.heroLeft {
+  position: relative;
+}
+
+.heroRight {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 620px;
+  overflow: visible;
+}
+
+/* ========================================
+   LANYARD CONTAINER
+======================================== */
+
+.lanyardContainer {
+  position: relative;
+  width: 100%;
+  height: 620px;
+  overflow: visible;
+}
+
+/* ========================================
+   OVERLAYS (TOP LAYER)
+======================================== */
+
+.heroFade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 12rem;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--color-surface-soft)
+  );
+  z-index: 3;
+}
+
+.bottomCurve {
+  position: absolute;
+  left: -15%;
+  right: -15%;
+  bottom: -5rem;
+  height: 10rem;
+  background: var(--color-surface-soft);
+  border-radius: 100% 100% 0 0;
+  z-index: 3;
+}
+
+/* ========================================
+   AVAILABILITY
+======================================== */
 
 .availability {
   display: inline-flex;
@@ -62,12 +125,10 @@
 }
 
 /* ========================================
-     TYPOGRAPHY
-  ======================================== */
+   TYPOGRAPHY
+======================================== */
 
-.heading {
-  margin-bottom: 1.5rem;
-}
+.heading { margin-bottom: 1.5rem; }
 
 .greeting {
   margin-bottom: 0.5rem;
@@ -76,7 +137,7 @@
 }
 
 .name {
-  font-size: clamp(3rem, 8vw, 4.5rem);
+  font-size: clamp(3rem, 6vw, 4.5rem);
   line-height: 1.05;
   font-weight: 600;
   letter-spacing: -0.04em;
@@ -86,21 +147,17 @@
 .role {
   display: block;
   margin-top: 0.5rem;
-
-  font-size: clamp(1.875rem, 5vw, 3rem);
+  font-size: clamp(1.875rem, 4vw, 3rem);
   font-weight: 400;
   line-height: 1.1;
-
   color: var(--color-ink-muted);
 }
 
 .tagline {
   max-width: 40rem;
   margin-bottom: 2.5rem;
-
   font-size: 1rem;
   line-height: 1.8;
-
   color: var(--color-ink-muted);
 }
 
@@ -111,8 +168,8 @@
 }
 
 /* ========================================
-     ACTIONS
-  ======================================== */
+   ACTIONS
+======================================== */
 
 .actions {
   display: flex;
@@ -128,37 +185,46 @@
 }
 
 /* ========================================
-     ANIMATION
-  ======================================== */
+   ANIMATION
+======================================== */
 
 @keyframes pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.5;
-  }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }
 
 /* ========================================
-    TRANSITION
-  ======================================== */
+   RESPONSIVE
+======================================== */
 
-  .bottomCurve {
-    position: absolute;
-  
-    left: -15%;
-    right: -15%;
-  
-    bottom: -5rem;
-  
-    height: 10rem;
-  
-    background: var(--color-surface-soft);
-  
-    border-radius: 100% 100% 0 0;
-  
-    z-index: 2;
+@media (max-width: 1200px) {
+  .heroContent {
+    grid-template-columns: 1fr 400px;
+    gap: 2.5rem;
   }
+}
+
+@media (max-width: 900px) {
+  .heroContent {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .heroRight {
+    min-height: 500px;
+  }
+
+  .lanyardContainer {
+    height: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroRight {
+    min-height: 420px;
+  }
+
+  .lanyardContainer {
+    height: 420px;
+  }
+}
