@@ -215,6 +215,26 @@ export const projectsLocales = {
         // Auto icon detection handles this
         primaryLink: "https://drive.google.com/drive/u/1/folders/1tmj1R_lhjtbB_Cx3Z5iv-Cu-DuAx-csS",
       },
+      {
+        number: "12",
+        name: "BBCA Forecasting on Sit-in Class Event by IT SCU with Don Bosco High School",
+        category: 'AI Solution',
+        role: "Data Science",
+        type: "Unika Soegijapranata Project",
+        description: "The student from Don Bosco high school were attending to SCU and having a seat in class. I have an honors from my lecturer Mrs. Shinta to present my analytics on stocks forecasting using LSTM machine learning model as a showcase of IT SCU outcomes to students of Don Bosco and IT SCU Batch 24.",
+        tags: ["Data Analytics", "Data Visual", "TensorFlow", "Python"],
+
+        media: {
+          type: "gallery",
+          images: [
+            {src: "assets/AI Solution Portfolio/Forecasting/BBCA Forecasting.png", aspect: "landscape"},
+            
+          ]
+        },
+  
+        // Auto icon detection handles this
+        primaryLink: "https://github.com/notyouriiz/Data_Intelligence/tree/main/Stocks%20Forecasting/BBCA",
+      },
 
     ]
   };
